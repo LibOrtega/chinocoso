@@ -50,24 +50,24 @@ export default function BrandStory() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
           <div className="text-center space-y-4">
             <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto">
-              <span className="text-3xl">🌱</span>
+              <span className="text-3xl">👨‍👩‍👧</span>
             </div>
             <h4 className="text-xl font-bold text-gray-900">CUIDAR</h4>
-            <p className="text-gray-600">奄美大島の自然環境に配慮した 原料調達と製造プロセス</p>
+            <p className="text-gray-600">Brindar atención con ternura, respeto y compromiso.</p>
           </div>
           <div className="text-center space-y-4">
             <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto">
-              <span className="text-3xl">🔬</span>
+              <span className="text-3xl">👶</span>
             </div>
             <h4 className="text-xl font-bold text-gray-900">CRECER</h4>
-            <p className="text-gray-600">伝統的な発酵技術と 最新の研究成果の融合</p>
+            <p className="text-gray-600">Apoyamos el crecimiento físico, emocional y cognitivo de cada pequeño..</p>
           </div>
           <div className="text-center space-y-4">
             <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto">
-              <span className="text-3xl">💫</span>
+              <span className="text-3xl">🩺</span>
             </div>
             <h4 className="text-xl font-bold text-gray-900">SANAR</h4>
-            <p className="text-gray-600">伝統文化の価値を 次世代に伝えていく使命</p>
+            <p className="text-gray-600">En Clinikids, sanar va más allá del tratamiento médico.</p>
           </div>
         </div>
       </div>
