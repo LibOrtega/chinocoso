@@ -1,4 +1,4 @@
-import { Instagram, Youtube, MessageCircle, MapPin, Phone } from "lucide-react"
+import { Instagram, Youtube, MessageCircle, MapPin, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function SocialMedia() {
@@ -18,7 +18,7 @@ export default function SocialMedia() {
             rel="noopener noreferrer"
             className="hover:scale-105 transition-transform"
           >
-            <Button variant="outline" className="flex items-center gap-2 hover:bg-pink-50 hover:text-pink-600 transition-colors">
+            <Button className="bg-[#f3994d] hover:bg-[#f3994d]/90 flex items-center gap-2">
               <Instagram className="h-5 w-5" />
               @clinikidscuu
             </Button>
@@ -30,7 +30,7 @@ export default function SocialMedia() {
             rel="noopener noreferrer"
             className="hover:scale-105 transition-transform"
           >
-            <Button variant="outline" className="flex items-center gap-2 hover:bg-red-50 hover:text-red-600 transition-colors">
+            <Button className="bg-[#f3994d] hover:bg-[#f3994d]/90 flex items-center gap-2">
               <Youtube className="h-5 w-5" />
               YouTube
             </Button>
@@ -42,7 +42,7 @@ export default function SocialMedia() {
             rel="noopener noreferrer"
             className="hover:scale-105 transition-transform"
           >
-            <Button variant="outline" className="flex items-center gap-2 hover:bg-black hover:text-white transition-colors">
+            <Button className="bg-[#f3994d] hover:bg-[#f3994d]/90 flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
               TikTok
             </Button>
@@ -52,7 +52,7 @@ export default function SocialMedia() {
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">¿Tienes alguna duda?</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3 text-gray-700">
               <MapPin className="h-6 w-6 text-[#5dc0b3]" />
               <div className="text-left">
@@ -65,26 +65,29 @@ export default function SocialMedia() {
               <Phone className="h-6 w-6 text-[#5dc0b3]" />
               <div className="text-left">
                 <p className="font-medium">Teléfono</p>
-                <a href="tel:6145502199" className="text-sm hover:text-[#5dc0b3] transition-colors">
+                <a 
+                  href="https://wa.me/6145502199" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-[#5dc0b3] transition-colors"
+                >
                   (614) 550 2199
                 </a>
               </div>
             </div>
-          </div>
 
-          <div className="border-t pt-6">
-            <p className="text-gray-600 mb-4">
-              Déjanos tu correo y nos pondremos en contacto contigo
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5dc0b3]"
-              />
-              <Button className="bg-[#5dc0b3] hover:bg-[#5dc0b3]/90">
-                Enviar
-              </Button>
+            <div className="flex items-center gap-3 text-gray-700">
+              <Mail className="h-6 w-6 text-[#5dc0b3]" />
+              <div className="text-left">
+                <p className="font-medium">Email</p>
+                <a 
+                  href="mailto:clinikidscuu@gmail.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-[#5dc0b3] transition-colors"
+                >
+                  clinikidscuu@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>
