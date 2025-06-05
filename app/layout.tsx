@@ -16,9 +16,9 @@ const notoSans = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: "Fermy - 奄美大島発、革新的な発酵ドリンク",
+  title: "Clinikids Cuu Pediatría Integral - Cuidado y salud para tus hijos en Chihuahua",
   description:
-    "伝統の知恵と現代のテクノロジーが出会い、新しい発酵文化が生まれる。奄美大島の伝統飲料『ミキ』とヤギミルクを掛け合わせた、革新的な発酵ドリンク Fermy。",
+    "Clinikids Cuu ofrece atención pediátrica integral, servicios médicos especializados y un ambiente amigable para niños y familias en Chihuahua. Agenda tu cita y conoce nuestras instalaciones.",
 }
 
 export default function RootLayout({
