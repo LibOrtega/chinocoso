@@ -20,7 +20,7 @@ export default function BrandStory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uvTlVqL6zdl3rxG3ValUpgRBIBKT0z.png"
+              src="/images/estetoscopio.jpg"
               alt="奄美大島の豊かな自然"
               fill
               className="object-cover"
