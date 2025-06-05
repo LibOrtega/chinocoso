@@ -25,10 +25,10 @@ export default function Facilities() {
   ]
 
   return (
-    <section id="facilities" className="py-24 bg-gradient-to-b from-white to-green-50">
+    <section id="facilities" className="py-24 bg-gradient-to-b from-white to-[#5dc0b3]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-green-600 font-medium tracking-wider">Nuestras Instalaciones</span>
+          <span className="text-[#5dc0b3] font-medium tracking-wider">Nuestras Instalaciones</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             Un espacio diseñado para los más pequeños
           </h2>
@@ -69,7 +69,7 @@ export default function Facilities() {
             href="https://maps.app.goo.gl/8AoURfzWK8CpBHKX6" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium"
+            className="inline-flex items-center gap-2 text-[#5dc0b3] hover:text-[#5dc0b3]/80 font-medium"
           >
             <svg 
               className="w-5 h-5" 

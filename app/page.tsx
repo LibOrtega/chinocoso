@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-green-50">
+    <main className="min-h-screen bg-gradient-to-b from-white to-[#5dc0b3]/10">
       {/* Sección de imagen expandida y texto centrado */}
       <section className="relative w-full h-screen overflow-hidden">
         <div className="flex items-center justify-center h-full bg-black/50">

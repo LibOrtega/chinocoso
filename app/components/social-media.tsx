@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function SocialMedia() {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-green-50">
+    <section className="py-16 bg-gradient-to-b from-white to-[#5dc0b3]/10">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contáctanos</h2>
         <p className="text-xl text-gray-600 mb-8">
@@ -54,7 +54,7 @@ export default function SocialMedia() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-center gap-3 text-gray-700">
-              <MapPin className="h-6 w-6 text-green-600" />
+              <MapPin className="h-6 w-6 text-[#5dc0b3]" />
               <div className="text-left">
                 <p className="font-medium">Dirección</p>
                 <p className="text-sm">Blas Cano de los Ríos 807, San Felipe I</p>
@@ -62,10 +62,10 @@ export default function SocialMedia() {
             </div>
             
             <div className="flex items-center gap-3 text-gray-700">
-              <Phone className="h-6 w-6 text-green-600" />
+              <Phone className="h-6 w-6 text-[#5dc0b3]" />
               <div className="text-left">
                 <p className="font-medium">Teléfono</p>
-                <a href="tel:6145502199" className="text-sm hover:text-green-600 transition-colors">
+                <a href="tel:6145502199" className="text-sm hover:text-[#5dc0b3] transition-colors">
                   (614) 550 2199
                 </a>
               </div>
@@ -80,9 +80,9 @@ export default function SocialMedia() {
               <input
                 type="email"
                 placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5dc0b3]"
               />
-              <Button className="bg-green-600 hover:bg-green-700">
+              <Button className="bg-[#5dc0b3] hover:bg-[#5dc0b3]/90">
                 Enviar
               </Button>
             </div>
