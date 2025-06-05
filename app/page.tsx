@@ -1,7 +1,6 @@
 import BrandStory from "./components/brand-story"
 import HowToUse from "./components/how-to-use"
 import Testimonials from "./components/testimonials"
-import FAQ from "./components/faq"
 import SocialMedia from "./components/social-media"
 import Image from "next/image"
 
@@ -34,7 +33,6 @@ export default function Home() {
       <BrandStory />
       <HowToUse />
       <Testimonials />
-      <FAQ />
       <SocialMedia />
     </main>
   )
