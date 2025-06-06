@@ -12,10 +12,6 @@ interface MainTestimonial {
   role: string;
 }
 
-interface TestimonialsData {
-  main: MainTestimonial;
-  reviews: Review[];
-}
 
 interface Testimonial {
   content: string
