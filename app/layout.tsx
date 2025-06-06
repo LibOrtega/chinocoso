@@ -19,6 +19,28 @@ export const metadata: Metadata = {
   title: "Clinikids Cuu Pediatría Integral - Cuidado y salud para tus hijos en Chihuahua",
   description:
     "Clinikids Cuu ofrece atención pediátrica integral, servicios médicos especializados y un ambiente amigable para niños y familias en Chihuahua. Agenda tu cita y conoce nuestras instalaciones.",
+  openGraph: {
+    title: "Clinikids Cuu Pediatría Integral - Cuidado y salud para tus hijos en Chihuahua",
+    description: "Clinikids Cuu ofrece atención pediátrica integral, servicios médicos especializados y un ambiente amigable para niños y familias en Chihuahua. Agenda tu cita y conoce nuestras instalaciones.",
+    url: "https://clinikidscuu.com",
+    siteName: "Clinikids Cuu",
+    images: [
+      {
+        url: "/images/opengraph.png", // Asegúrate de agregar esta imagen en tu carpeta public
+        width: 1200,
+        height: 630,
+        alt: "Clinikids Cuu - Pediatría Integral",
+      },
+    ],
+    locale: "es_MX",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clinikids Cuu Pediatría Integral",
+    description: "Clinikids Cuu ofrece atención pediátrica integral, servicios médicos especializados y un ambiente amigable para niños y familias en Chihuahua.",
+    images: ["/images/opengraph.png"],
+  },
 }
 
 export default function RootLayout({
