@@ -7,7 +7,7 @@ export default function BrandStory() {
     <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-16">
-          <span className="text-[#5dc0b3] font-medium tracking-wider">¿Quienes somos?</span>
+          <span className="text-[#5dc0b3] font-semibold tracking-wider text-xl md:text-2xl">¿Quienes somos?</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             <br />
             Bienvenidos a la familia Clinikids

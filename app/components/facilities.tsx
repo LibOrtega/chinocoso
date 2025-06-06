@@ -5,22 +5,22 @@ export default function Facilities() {
     {
       title: "Sala de Espera",
       description: "Un espacio acogedor y divertido para que los pequeños se sientan cómodos mientras esperan su consulta.",
-      image: "/images/facilities/waiting-room.jpg"
+      image: "/images/waiting-room.png"
     },
     {
       title: "Consultorios",
       description: "Consultorios equipados con la última tecnología para brindar la mejor atención a nuestros pacientes.",
-      image: "/images/facilities/consultation-room.jpg"
+      image: "/images/consultation-room.png"
     },
     {
       title: "Área de Juego",
       description: "Zona especial para que los niños se diviertan y se sientan como en casa.",
-      image: "/images/facilities/play-area.jpg"
+      image: "/images/play-area.png"
     },
     {
       title: "Recepción",
       description: "Personal amable y atento listo para recibirte y ayudarte en lo que necesites.",
-      image: "/images/facilities/reception.jpg"
+      image: "/images/reception.png"
     }
   ]
 
@@ -28,7 +28,7 @@ export default function Facilities() {
     <section id="facilities" className="py-24 bg-gradient-to-b from-white to-[#ffffff]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="font-medium tracking-wider" style={{ color: '#5dc0b3' }}>Nuestras Instalaciones</h2>
+          <h2 className="font-medium tracking-wider text-xl md:text-2xl" style={{ color: '#5dc0b3' }}>Nuestras Instalaciones</h2>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             Un espacio diseñado para los más pequeños
           </h2>

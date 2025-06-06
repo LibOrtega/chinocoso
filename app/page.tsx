@@ -8,12 +8,22 @@ import Image from "next/image"
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-[#5dc0b3]/10">
-      {/* Sección de imagen expandida y texto centrado */}
+      {/* Hero Section con imagen de fondo y overlay */}
       <section className="relative w-full h-screen overflow-hidden">
-        <div className="flex items-center justify-center h-full bg-black/50">
-          <h1 className="text-white text-5xl md:text-7xl font-bold text-center shadow-lg">
+        <Image
+          src="/images/hero-background.jpg"
+          alt="Clinikids Cuu Pediatría Integral - Clínica para niños en Chihuahua"
+          fill
+          priority
+          className="object-cover object-center z-0 blur-sm"
+        />
+        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+          <h1 className="text-white text-5xl md:text-7xl font-bold mb-6" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.7), 0 1.5px 0 #000' }}>
             Clinikids Cuu Pediatría Integral
           </h1>
+          <p className="text-white text-xl md:text-2xl font-medium mb-8" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 1px 0 #000' }}>
+            Cuidamos a tus pequeños con amor, experiencia y un ambiente divertido
+          </p>
         </div>
       </section>
       <BrandStory />
