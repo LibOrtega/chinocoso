@@ -2,42 +2,38 @@ import { CheckCircle2 } from "lucide-react"
 
 interface Service {
   title: string
-  description: string
   items: string[]
 }
 
 const services: Service[] = [
   {
-    title: "Servicios Médicos",
-    description: "Atención pediátrica integral para el bienestar de tu hijo",
+    title: "Servicios Principales",
     items: [
-      "Consulta pediátrica general",
-      "Control de niño sano",
-      "Vacunación",
-      "Atención de enfermedades agudas",
-      "Seguimiento de desarrollo"
+      "Pediatría",
+      "Nutrición Clínica",
+      "Terapia de Lenguaje",
+      "Psicología Pediátrica"
     ]
   },
   {
-    title: "Servicios Especializados",
-    description: "Cuidado especializado para necesidades específicas",
+    title: "Especialidades",
     items: [
-      "Nutrición pediátrica",
-      "Desarrollo y estimulación temprana",
-      "Orientación a padres",
-      "Manejo de problemas de conducta",
-      "Seguimiento de crecimiento"
+      "Nefrología Pediátrica",
+      "Neurología Pediátrica",
+      "Fisioterapia Pediátrica",
+      "Neumología Pediátrica",
+      "Dermatología Pediátrica",
+      "Gastroenterología Pediátrica"
     ]
   },
   {
-    title: "Servicios Adicionales",
-    description: "Complementos para una experiencia completa",
+    title: "Desarrollo y Cuidado",
     items: [
-      "Área de juegos",
-      "Sala de espera cómoda",
-      "Estacionamiento",
-      "Cafetería",
-      "Wi-Fi gratuito"
+      "Estimulación Temprana",
+      "Pediatría del Desarrollo",
+      "Asesoría de Lactancia",
+      "Atención Integral del Síndrome de Down",
+      "Asesoría de Alimentación Oromotora y Selectividad Alimentaria"
     ]
   }
 ]
@@ -51,7 +47,7 @@ export default function HowToUse() {
             Nuestros Servicios
           </h2>
           <p className="text-xl text-gray-600">
-            Ofrecemos una atención integral para el cuidado de tu hijo
+            Ofrecemos atención integral y especializada para el desarrollo y bienestar de tus hijos
           </p>
         </div>
 
@@ -61,12 +57,9 @@ export default function HowToUse() {
               key={index}
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
             >
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-xl font-semibold text-[#5dc0b3] mb-4 text-center">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-6">
-                {service.description}
-              </p>
               <ul className="space-y-3">
                 {service.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-2">
