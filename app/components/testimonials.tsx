@@ -26,17 +26,17 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    content: "Excelente atención, muy profesionales y amables con los niños. El Dr. es muy atento y explica todo detalladamente.",
+    content: "Tuve una experiencia excepcional en este lugar. La atención es sobresaliente; el personal está altamente capacitado y se mantiene actualizado en las mejores prácticas. Se toman el tiempo necesario para explicarte cada detalle y guiarte en la búsqueda de lo que tu hijo necesita. Además, las instalaciones son más que agradables; están diseñadas de manera óptima para facilitar su trabajo. El trato es muy profesional y se nota una genuina preocupación por las opiniones tanto de los padres como de los niños. Esto crea un ambiente de confianza y colaboración que es fundamental para el desarrollo de nuestros hijos. Recomiendo este lugar a todos los padres que buscan un apoyo sólido y comprometido para sus hijos 1000/10",
     author: "Google Maps",
     rating: 5
   },
   {
-    content: "La mejor pediatra que he conocido, muy profesional y atenta. Las instalaciones son muy bonitas y limpias.",
+    content: "Aparte le tomaron fotos a tus hijos o si quieres tú con ellos, instantáneas para que tú las tengas de recuerdo 🥰❤️🫶 También ofrecen té o café para esperar tu turno o durante tu consulta. Tuvimos la fortuna de encontrar al mejor lugar y por supuesto al mejor médico en una emergencia cuando estás lejos de casa!! Gracias Doc Alex y a tu equipo por el tiempo y atención increíbles para mi pequeña, sin duda lo recomiendo ampliamente, domingo nos atendieron la consulta profunda y oportuna para mi nena, gracias a todo su equipo.",
     author: "Google Maps",
     rating: 5
   },
   {
-    content: "Excelente servicio, muy buena atención y el doctor es muy amable y profesional. Lo recomiendo ampliamente.",
+    content: "Yo los encontré por Google en un día que mi bebé amaneció con vómito, me dieron cita muy pronto, la doctora Marisol nos atendió muy amable, nos escuchó y explicó todo, es muy bonita doctora, recomiendo totalmente los servicios. Aparte son muy detallistas.",
     author: "Google Maps",
     rating: 5
   }
@@ -65,6 +65,25 @@ export default function Testimonials() {
               <p className="text-[#5dc0b3] font-medium">{testimonial.author}</p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="container mx-auto px-4 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="p-6">
+            <div className="text-4xl mb-2">📸</div>
+            <h3 className="text-lg font-semibold mb-1">Recuerdos Especiales</h3>
+            <p className="text-gray-600 text-sm">Te tomamos fotos con tus pequeños para que conserves momentos únicos de tu visita.</p>
+          </div>
+          <div className="p-6">
+            <div className="text-4xl mb-2">☕</div>
+            <h3 className="text-lg font-semibold mb-1">Comodidad y Calidez</h3>
+            <p className="text-gray-600 text-sm">Disfruta de té o café mientras esperas o durante tu consulta, porque tu bienestar también es importante.</p>
+          </div>
+          <div className="p-6">
+            <div className="text-4xl mb-2">💖</div>
+            <h3 className="text-lg font-semibold mb-1">Atención con Amor</h3>
+            <p className="text-gray-600 text-sm">Nos esforzamos por crear un ambiente de confianza y cariño para ti y tus hijos.</p>
+          </div>
         </div>
       </div>
     </section>
