@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Star } from "lucide-react"
 
 interface Review {
@@ -61,7 +60,7 @@ export default function Testimonials() {
                   <Star key={i} className="h-5 w-5 fill-[#5dc0b3] text-[#5dc0b3]" />
                 ))}
               </div>
-              <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
+              <p className="text-gray-600 mb-4 italic">&#34;{testimonial.content}&#34;</p>
               <p className="text-[#5dc0b3] font-medium">{testimonial.author}</p>
             </div>
           ))}
