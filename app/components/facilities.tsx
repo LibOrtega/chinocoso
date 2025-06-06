@@ -25,10 +25,10 @@ export default function Facilities() {
   ]
 
   return (
-    <section id="facilities" className="py-24 bg-gradient-to-b from-white to-[#5dc0b3]/10">
+    <section id="facilities" className="py-24 bg-gradient-to-b from-white to-[#ffffff]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-[#5dc0b3] font-medium tracking-wider">Nuestras Instalaciones</span>
+          <h2 className="font-medium tracking-wider" style={{ color: '#5dc0b3' }}>Nuestras Instalaciones</h2>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             Un espacio diseñado para los más pequeños
           </h2>

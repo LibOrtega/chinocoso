@@ -43,7 +43,7 @@ export default function BrandStory() {
               atenció pediátrica, siempre con el compromiso de proporcionar el mejor cuidado posible.
             </p>
             <Link href="#facilities">
-              <Button variant="outline" className="mt-4 bg-[#f3994d] hover:bg-[#f3994d]/90 hover:text-[#5dc0b3] transition-colors">
+              <Button variant="outline" className="mt-4 bg-[#f3994d] hover:bg-[#f3994d]/90 text-white transition-colors">
                 Nuestras Instalaciones
               </Button>
             </Link>
