@@ -1,16 +1,5 @@
 import { Star } from "lucide-react"
 
-interface Review {
-  comment: string;
-  role: string;
-}
-
-interface MainTestimonial {
-  image: string;
-  rating: number;
-  comment: string;
-  role: string;
-}
 
 
 interface Testimonial {
