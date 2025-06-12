@@ -11,17 +11,17 @@ export default function Home() {
       {/* Hero Section con imagen de fondo y overlay */}
       <section className="relative w-full h-screen overflow-hidden">
         <Image
-          src="/images/hero-background.jpg"
+          src="/images/backgroundtemporal.png"
           alt="Clinikids Cuu Pediatría Integral - Clínica para niños en Chihuahua"
           fill
           priority
           className="object-cover object-center z-0 blur-sm"
         />
         <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-white text-5xl md:text-7xl font-bold mb-6" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.7), 0 1.5px 0 #000' }}>
+          <h1 className="text-white text-5xl md:text-7xl font-bold mb-6">
             Clinikids Cuu Pediatría Integral
           </h1>
-          <p className="text-white text-xl md:text-2xl font-medium mb-8" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 1px 0 #000' }}>
+          <p className="text-white text-xl md:text-2xl font-medium mb-8">
             Cuidamos a tus pequeños con amor, experiencia y un ambiente divertido
           </p>
         </div>

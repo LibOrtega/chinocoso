@@ -21,7 +21,7 @@ export default function BrandStory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
-              src="/images/estetoscopio.jpg"
+              src="/images/logoclini.jpg"
               alt="Ambiente de Clinikids"
               fill
               className="object-cover"
@@ -40,7 +40,7 @@ export default function BrandStory() {
             </p>
             <p className="text-gray-600 leading-relaxed">
               Nuestro equipo de especialistas trabaja en conjunto para ofrecer un enfoque integral en la
-              atenció pediátrica, siempre con el compromiso de proporcionar el mejor cuidado posible.
+              atención pediátrica, siempre con el compromiso de proporcionar el mejor cuidado posible.
             </p>
             <Link href="#facilities">
               <Button variant="outline" className="mt-4 bg-[#f3994d] hover:bg-[#f3994d]/90 text-white transition-colors">

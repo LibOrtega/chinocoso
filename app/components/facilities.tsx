@@ -5,22 +5,17 @@ export default function Facilities() {
     {
       title: "Sala de Espera",
       description: "Un espacio acogedor y divertido para que los pequeños se sientan cómodos mientras esperan su consulta.",
-      image: "/images/waiting-room.png"
+      image: "/images/salaespera.jpg"
     },
     {
-      title: "Consultorios",
-      description: "Consultorios equipados con la última tecnología para brindar la mejor atención a nuestros pacientes.",
-      image: "/images/consultation-room.png"
+      title: "Consultorio",
+      description: "Consultorio equipado con la última tecnología para brindar la mejor atención a nuestros pacientes.",
+      image: "/images/consultorio.jpg"
     },
     {
       title: "Área de Juego",
       description: "Zona especial para que los niños se diviertan y se sientan como en casa.",
-      image: "/images/play-area.png"
-    },
-    {
-      title: "Recepción",
-      description: "Personal amable y atento listo para recibirte y ayudarte en lo que necesites.",
-      image: "/images/reception.png"
+      image: "/images/juegosclini.jpg"
     }
   ]
 
@@ -38,21 +33,22 @@ export default function Facilities() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {facilities.map((facility, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group"
             >
-              <div className="relative h-64">
+              <div className="relative h-72 overflow-hidden">
                 <Image
                   src={facility.image}
                   alt={facility.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="p-6">
+              <div className="p-6 transform transition-transform duration-500 group-hover:-translate-y-2">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{facility.title}</h3>
                 <p className="text-gray-600">{facility.description}</p>
               </div>
@@ -69,7 +65,7 @@ export default function Facilities() {
             href="https://maps.app.goo.gl/8AoURfzWK8CpBHKX6" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#5dc0b3] hover:text-[#5dc0b3]/80 font-medium"
+            className="inline-flex items-center gap-2 text-[#5dc0b3] hover:text-[#5dc0b3]/80 font-medium transition-colors duration-300"
           >
             <svg 
               className="w-5 h-5" 
