@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '../../lib/mongodb';
+import { sendNutritionPlanEmail } from '../../lib/email';
 
 export async function POST(request) {
   try {
@@ -43,9 +44,18 @@ export async function POST(request) {
       estado: 'nuevo'
     });
 
+    // Enviar email con el plan de nutrición
+    try {
+      await sendNutritionPlanEmail(body);
+      console.log('Email enviado exitosamente a:', body.emailMadre);
+    } catch (emailError) {
+      console.error('Error al enviar email:', emailError);
+      // No fallamos si el email no se envía, solo lo registramos
+    }
+
     return NextResponse.json({
       success: true,
-      message: 'Formulario enviado exitosamente',
+      message: 'Formulario enviado exitosamente y plan de nutrición enviado por email',
       id: result.insertedId
     });
 
