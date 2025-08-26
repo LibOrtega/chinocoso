@@ -13,13 +13,13 @@ export default function Home() {
       <main>
         {/* Hero Section con imagen de fondo y overlay */}
         <section className="relative w-full h-screen overflow-hidden">
-          <Image
-            src="/images/backgroundtemporal.jpg"
-            alt="Clinikids Cuu Pediatría Integral - Clínica para niños en Chihuahua"
-            fill
-            priority
-            className="object-cover object-center z-0 blur-sm"
-          />
+                                <Image
+                        src="/images/backgroundtemporal.png"
+                        alt="Clinikids Cuu Pediatría Integral - Clínica para niños en Chihuahua"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 blur-sm"
+                      />
           <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
             <h1 className="text-white text-5xl md:text-7xl font-bold mb-6">
               Clinikids Cuu Pediatría Integral
