@@ -1,84 +1,42 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { Menu, X } from "lucide-react"
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <div className="relative w-24 h-12">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbQp5FxeGuiKOmwMpVkqvFO28tXwIY.png"
-              alt="Fermy"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          <nav
-            className={`
-            fixed md:relative top-0 right-0 h-screen md:h-auto w-full md:w-auto
-            bg-white md:bg-transparent transform transition-transform duration-300 ease-in-out
-            ${isMenuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"}
-            md:flex md:items-center md:space-x-8
-          `}
-          >
-            <button className="md:hidden absolute top-6 right-6 text-gray-800" onClick={() => setIsMenuOpen(false)}>
-              <X className="h-6 w-6" />
-            </button>
-            <div className="flex flex-col md:flex-row items-center justify-center h-full md:h-auto space-y-8 md:space-y-0 md:space-x-8">
-              <a
-                href="#about"
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-serif"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Conócenos
-              </a>
-              <a
-                href="#how-to-use"
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-serif"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Especialistas
-              </a>
-              <a
-                href="#features"
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-serif"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Servicios
-              </a>
-              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                  Contacto
-                </Button>
-              </div>
-            </div>
+    <header className="bg-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-2xl font-bold text-[#5dc0b3]">
+            Clinikids Cuu
+          </Link>
+          
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/#about" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Conócenos
+            </Link>
+            <Link href="/#services" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Servicios
+            </Link>
+            <Link href="/#facilities" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Instalaciones
+            </Link>
+            <Link href="/#contact" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Contacto
+            </Link>
+            <Link href="/tienda" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Tienda
+            </Link>
           </nav>
 
-          <button className="md:hidden text-gray-800" onClick={() => setIsMenuOpen(true)}>
-            <Menu className="h-6 w-6" />
-          </button>
+          <div className="md:hidden">
+            <Button variant="outline" size="sm">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

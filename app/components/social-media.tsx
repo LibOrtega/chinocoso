@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function SocialMedia() {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-[#5dc0b3]/10">
+    <section id="contact" className="py-16 bg-gradient-to-b from-white to-[#5dc0b3]/10">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contáctanos</h2>
         <p className="text-xl text-gray-600 mb-8">
