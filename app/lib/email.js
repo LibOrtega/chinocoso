@@ -1,17 +1,33 @@
 import nodemailer from 'nodemailer';
 
-// Configuración del transportador de email
-const transporter = nodemailer.createTransporter({
-  service: 'gmail', // o 'outlook', 'yahoo', etc.
-  auth: {
-    user: process.env.EMAIL_USER, // Tu email
-    pass: process.env.EMAIL_PASS  // Tu contraseña de aplicación
+// Variable para almacenar el transportador
+let transporter = null;
+
+// Función para obtener el transportador (solo se ejecuta en runtime)
+function getTransporter() {
+  if (!transporter) {
+    // Verificar que las variables de entorno estén disponibles
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      throw new Error('Variables de entorno EMAIL_USER y EMAIL_PASS no están configuradas');
+    }
+    
+    transporter = nodemailer.createTransporter({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
   }
-});
+  return transporter;
+}
 
 // Función para enviar email con el plan de nutrición
 export async function sendNutritionPlanEmail(formData) {
   try {
+    // Obtener el transportador
+    const emailTransporter = getTransporter();
+    
     // Plantilla del email
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -155,7 +171,7 @@ export async function sendNutritionPlanEmail(formData) {
     };
 
     // Enviar el email
-    const info = await transporter.sendMail(mailOptions);
+    const info = await emailTransporter.sendMail(mailOptions);
     console.log('Email enviado:', info.messageId);
     
     return { success: true, messageId: info.messageId };
