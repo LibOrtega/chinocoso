@@ -17,7 +17,7 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Formulario enviado exitosamente',
+      message: 'Formulario enviado exitosamente - Vercel Fix',
       id: result.insertedId
     });
 
