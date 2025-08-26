@@ -260,40 +260,40 @@ export default function PlanNutricion() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       ¿Tu hijo tiene alguna alergia alimentaria?
                     </label>
-                    <textarea
-                      name="alergias"
-                      value={formData.alergias}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
-                      rows="2"
-                      placeholder="Describe las alergias o escribe 'Ninguna' si no las hay"
-                    />
+                                         <textarea
+                       name="alergias"
+                       value={formData.alergias}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
+                       rows={2}
+                       placeholder="Describe las alergias o escribe 'Ninguna' si no las hay"
+                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       ¿Qué alimentos le gustan más a tu hijo?
                     </label>
-                    <textarea
-                      name="alimentosGustan"
-                      value={formData.alimentosGustan}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
-                      rows="2"
-                      placeholder="Ej: frutas, verduras, pollo, etc."
-                    />
+                                         <textarea
+                       name="alimentosGustan"
+                       value={formData.alimentosGustan}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
+                       rows={2}
+                       placeholder="Ej: frutas, verduras, pollo, etc."
+                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       ¿Qué alimentos rechaza tu hijo?
                     </label>
-                    <textarea
-                      name="alimentosRechazan"
-                      value={formData.alimentosRechazan}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
-                      rows="2"
-                      placeholder="Ej: brócoli, pescado, etc."
-                    />
+                                         <textarea
+                       name="alimentosRechazan"
+                       value={formData.alimentosRechazan}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
+                       rows={2}
+                       placeholder="Ej: brócoli, pescado, etc."
+                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -325,14 +325,14 @@ export default function PlanNutricion() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       ¿Tu hijo tiene alguna condición médica que debamos conocer?
                     </label>
-                    <textarea
-                      name="condicionesMedicas"
-                      value={formData.condicionesMedicas}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
-                      rows="2"
-                      placeholder="Describe cualquier condición médica o escribe 'Ninguna'"
-                    />
+                                         <textarea
+                       name="condicionesMedicas"
+                       value={formData.condicionesMedicas}
+                       onChange={handleInputChange}
+                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5dc0b3] focus:border-transparent"
+                       rows={2}
+                       placeholder="Describe cualquier condición médica o escribe 'Ninguna'"
+                     />
                   </div>
                   <div className="bg-[#5dc0b3]/10 p-4 rounded-lg border border-[#5dc0b3]/20">
                     <div className="flex items-center gap-3">
