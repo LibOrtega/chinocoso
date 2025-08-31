@@ -8,7 +8,7 @@ export async function POST(request) {
     if (!process.env.MONGODB_URI) {
       console.error('MONGODB_URI no está definida');
       return NextResponse.json(
-        { success: false, error: 'Configuración de base de datos no encontrada' },
+        { success: false, error: 'Configuración de base de datos no encontrada - MONGODB_URI no definida' },
         { status: 500 }
       );
     }
@@ -26,8 +26,17 @@ export async function POST(request) {
 
     const client = await clientPromise;
     
+    // TEMPORAL: Manejar el caso cuando client es null (modo de prueba)
+    if (!client) {
+      console.log('⚠️ Modo de prueba - MongoDB no disponible');
+      return NextResponse.json(
+        { success: false, error: 'Modo de prueba - Base de datos no configurada' },
+        { status: 500 }
+      );
+    }
+    
     // Verificar que la conexión sea exitosa
-    if (!client || !client.db) {
+    if (!client.db) {
       console.error('Conexión a MongoDB falló');
       return NextResponse.json(
         { success: false, error: 'Conexión a base de datos falló' },

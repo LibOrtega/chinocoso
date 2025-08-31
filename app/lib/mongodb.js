@@ -18,8 +18,9 @@ if (uri) {
     clientPromise = client.connect();
   }
 } else {
-  // Si no hay URI, crear una promesa que siempre falle
-  clientPromise = Promise.reject(new Error('MONGODB_URI no está definida'));
+  // TEMPORAL: No fallar, solo loggear el error
+  console.log('⚠️ MONGODB_URI no está definida - Modo de prueba');
+  clientPromise = Promise.resolve(null);
 }
 
 export default clientPromise;
