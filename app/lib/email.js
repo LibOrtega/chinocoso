@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-// Variable para almacenar el transportador (deployment forzado)
+// Variable para almacenar el transportador (FORZANDO DEPLOYMENT)
 let transporter = null;
 
 // Función para obtener el transportador (solo se ejecuta en runtime)
