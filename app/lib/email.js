@@ -28,140 +28,70 @@ export async function sendNutritionPlanEmail(formData) {
     // Obtener el transportador
     const emailTransporter = getTransporter();
     
-    // Plantilla del email
+    // Plantilla del email personalizada
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: formData.emailMadre,
-      subject: '¡Tu Plan de Nutrición Gratuito de 1 Semana - Clinikids Cuu!',
+      subject: '🌟 Tu plan de alimentación semanal gratuito ya está aquí',
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #5dc0b3; padding: 20px; text-align: center;">
-            <h1 style="color: white; margin: 0;">🥗 Clinikids Cuu</h1>
-            <p style="color: white; margin: 10px 0 0 0;">Pediatría Integral</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9;">
+          <!-- Header con logo -->
+          <div style="background-color: #5dc0b3; padding: 25px; text-align: center; border-radius: 10px 10px 0 0;">
+            <h1 style="color: white; margin: 0; font-size: 28px;">🏥 Clinikids Cuu</h1>
+            <p style="color: white; margin: 8px 0 0 0; font-size: 16px;">Pediatría Integral</p>
           </div>
           
-          <div style="padding: 30px; background-color: #f9f9f9;">
-            <h2 style="color: #333; margin-bottom: 20px;">¡Hola ${formData.nombreMadre}! 👋</h2>
+          <!-- Contenido principal -->
+          <div style="padding: 30px; background-color: white; margin: 0 20px;">
+            <h2 style="color: #333; margin-bottom: 25px; font-size: 24px;">Hola mamá 👩‍👧‍👦</h2>
             
-            <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">
-              Gracias por tu interés en nuestro <strong>Plan de Nutrición Personalizado</strong> para ${formData.nombreNino}.
+            <p style="color: #555; line-height: 1.7; margin-bottom: 20px; font-size: 16px;">
+              De parte de <strong style="color: #5dc0b3;">Clinikids</strong>, queremos agradecerte por tu interés y confianza. 🙌
             </p>
             
-            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="color: #856404; margin-top: 0;">🎁 ¡Tu Plan Gratuito de 1 Semana!</h3>
-              <p style="color: #856404; margin-bottom: 0;">
-                Como prometimos, aquí tienes tu plan de nutrición gratuito para empezar a mejorar la alimentación de ${formData.nombreNino}.
+            <p style="color: #555; line-height: 1.7; margin-bottom: 20px; font-size: 16px;">
+              Tal como lo solicitaste, te compartimos tu <strong style="color: #5dc0b3;">prueba gratuita del plan de alimentación semanal</strong>, diseñado especialmente para apoyar el bienestar y la nutrición de tu peque.
+            </p>
+            
+            <!-- Caja destacada -->
+            <div style="background-color: #f0f9ff; border: 2px solid #5dc0b3; padding: 20px; border-radius: 10px; margin: 25px 0; text-align: center;">
+              <p style="color: #5dc0b3; font-size: 18px; font-weight: bold; margin: 0;">
+                👉 En este correo encontrarás adjunto el PDF con el plan de alimentación, para que lo tengas siempre a la mano.
               </p>
             </div>
             
-            <h3 style="color: #5dc0b3; margin-top: 30px;">📋 Plan de Nutrición Semanal</h3>
+            <p style="color: #555; line-height: 1.7; margin-bottom: 25px; font-size: 16px;">
+              Recuerda que en <strong style="color: #5dc0b3;">Clinikids</strong> trabajamos todos los días para acompañarte en el desarrollo saludable de tu hijo. Si tienes dudas o quieres más información, no dudes en ponerte en contacto con nosotros:
+            </p>
             
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #5dc0b3;">
-              <h4 style="color: #333; margin-top: 0;">Lunes - Día 1</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Avena con frutas y leche</li>
-                <li><strong>Refrigerio:</strong> Manzana con mantequilla de almendras</li>
-                <li><strong>Almuerzo:</strong> Pollo a la plancha con arroz y verduras</li>
-                <li><strong>Refrigerio:</strong> Yogur griego con granola</li>
-                <li><strong>Cena:</strong> Sopa de verduras con pan integral</li>
-              </ul>
+            <!-- Información de contacto -->
+            <div style="background-color: #f8f9fa; border-radius: 10px; padding: 20px; margin: 25px 0;">
+              <div style="margin-bottom: 15px;">
+                <span style="color: #5dc0b3; font-size: 18px; margin-right: 10px;">📍</span>
+                <span style="color: #333; font-size: 16px;">Blas Cano de los Ríos 807, San Felipe I, Chihuahua, Chih. México</span>
+              </div>
+              <div style="margin-bottom: 15px;">
+                <span style="color: #5dc0b3; font-size: 18px; margin-right: 10px;">📞</span>
+                <span style="color: #333; font-size: 16px;">(614) 550 2199</span>
+              </div>
+              <div>
+                <span style="color: #5dc0b3; font-size: 18px; margin-right: 10px;">🌐</span>
+                <span style="color: #333; font-size: 16px;">www.clinikidscuu.com</span>
+              </div>
             </div>
             
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f3994d;">
-              <h4 style="color: #333; margin-top: 0;">Martes - Día 2</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Huevos revueltos con pan integral</li>
-                <li><strong>Refrigerio:</strong> Plátano con miel</li>
-                <li><strong>Almuerzo:</strong> Pescado al horno con papas y ensalada</li>
-                <li><strong>Refrigerio:</strong> Queso cottage con frutas</li>
-                <li><strong>Cena:</strong> Pasta integral con salsa de tomate y carne molida</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #5dc0b3;">
-              <h4 style="color: #333; margin-top: 0;">Miércoles - Día 3</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Smoothie de frutas con leche</li>
-                <li><strong>Refrigerio:</strong> Naranja y nueces</li>
-                <li><strong>Almuerzo:</strong> Carne asada con frijoles y arroz</li>
-                <li><strong>Refrigerio:</strong> Palomitas de maíz caseras</li>
-                <li><strong>Cena:</strong> Enchiladas de pollo con guacamole</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f3994d;">
-              <h4 style="color: #333; margin-top: 0;">Jueves - Día 4</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Panqueques integrales con miel</li>
-                <li><strong>Refrigerio:</strong> Uvas y queso</li>
-                <li><strong>Almuerzo:</strong> Pavo con puré de papas y brócoli</li>
-                <li><strong>Refrigerio:</strong> Batido de proteína</li>
-                <li><strong>Cena:</strong> Pizza casera con ingredientes saludables</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #5dc0b3;">
-              <h4 style="color: #333; margin-top: 0;">Viernes - Día 5</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Cereal integral con leche y frutas</li>
-                <li><strong>Refrigerio:</strong> Pera con almendras</li>
-                <li><strong>Almuerzo:</strong> Lentejas con arroz y ensalada</li>
-                <li><strong>Refrigerio:</strong> Yogur con miel</li>
-                <li><strong>Cena:</strong> Tacos de pescado con tortillas de maíz</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f3994d;">
-              <h4 style="color: #333; margin-top: 0;">Sábado - Día 6</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Tostadas francesas con frutas</li>
-                <li><strong>Refrigerio:</strong> Melón y queso fresco</li>
-                <li><strong>Almuerzo:</strong> Pollo a la parrilla con ensalada</li>
-                <li><strong>Refrigerio:</strong> Barras de granola caseras</li>
-                <li><strong>Cena:</strong> Sopa de fideos con verduras</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #5dc0b3;">
-              <h4 style="color: #333; margin-top: 0;">Domingo - Día 7</h4>
-              <ul style="color: #555;">
-                <li><strong>Desayuno:</strong> Burrito de huevo con frijoles</li>
-                <li><strong>Refrigerio:</strong> Piña y coco</li>
-                <li><strong>Almuerzo:</strong> Carne molida con arroz integral</li>
-                <li><strong>Refrigerio:</strong> Helado casero de frutas</li>
-                <li><strong>Cena:</strong> Ensalada de atún con aguacate</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: #d4edda; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="color: #155724; margin-top: 0;">💡 Consejos Importantes</h3>
-              <ul style="color: #155724;">
-                <li>Mantén horarios regulares para las comidas</li>
-                <li>Incluye agua en cada comida</li>
-                <li>Evita bebidas azucaradas</li>
-                <li>Involucra a ${formData.nombreNino} en la preparación</li>
-                <li>Haz las comidas divertidas y coloridas</li>
-              </ul>
-            </div>
-            
-            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="color: #856404; margin-top: 0;">📞 ¿Necesitas Ayuda?</h3>
-              <p style="color: #856404; margin-bottom: 0;">
-                Si tienes preguntas sobre este plan o quieres continuar con el programa completo, 
-                contáctanos al <strong>(614) 550 2199</strong> o visita nuestra clínica en 
-                <strong>Blas Cano de los Ríos 807, San Felipe I</strong>.
-              </p>
-            </div>
+            <p style="color: #555; line-height: 1.7; margin-bottom: 25px; font-size: 16px;">
+              Gracias por ser parte de la familia <strong style="color: #5dc0b3;">Clinikids</strong> 💙
+            </p>
             
             <div style="text-align: center; margin-top: 30px;">
-              <p style="color: #666; font-size: 14px;">
-                Este es tu plan gratuito de 1 semana. Para continuar con el programa completo 
-                y recibir seguimiento personalizado, agenda tu cita con nosotros.
-              </p>
+              <p style="color: #5dc0b3; font-size: 18px; font-weight: bold; margin: 0;">Con cariño,</p>
+              <p style="color: #5dc0b3; font-size: 16px; margin: 5px 0 0 0;">El equipo Clinikids</p>
             </div>
           </div>
           
-          <div style="background-color: #333; padding: 20px; text-align: center;">
+          <!-- Footer -->
+          <div style="background-color: #333; padding: 20px; text-align: center; margin: 0 20px; border-radius: 0 0 10px 10px;">
             <p style="color: white; margin: 0; font-size: 14px;">
               © 2024 Clinikids Cuu Pediatría Integral. Todos los derechos reservados.
             </p>
