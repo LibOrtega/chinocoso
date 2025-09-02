@@ -11,7 +11,7 @@ function getTransporter() {
       throw new Error('Variables de entorno EMAIL_USER y EMAIL_PASS no están configuradas');
     }
     
-    transporter = nodemailer.createTransporter({
+    transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,

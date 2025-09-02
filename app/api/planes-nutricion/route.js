@@ -54,9 +54,11 @@ export async function POST(request) {
     });
 
     // Enviar email con el plan de nutrición
+    let emailSent = false;
     try {
       await sendNutritionPlanEmail(body);
       console.log('Email enviado exitosamente a:', body.emailMadre);
+      emailSent = true;
     } catch (emailError) {
       console.error('Error al enviar email:', emailError);
       // No fallamos si el email no se envía, solo lo registramos
@@ -64,8 +66,11 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Formulario enviado exitosamente y plan de nutrición enviado por email',
-      id: result.insertedId
+      message: emailSent 
+        ? 'Formulario enviado exitosamente y plan de nutrición enviado por email'
+        : 'Formulario enviado exitosamente. Error al enviar email, contacta con nosotros.',
+      id: result.insertedId,
+      emailSent: emailSent
     });
 
   } catch (error) {
