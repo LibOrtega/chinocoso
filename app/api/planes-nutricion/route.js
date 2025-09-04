@@ -2,8 +2,34 @@ import { NextResponse } from 'next/server';
 import clientPromise from '../../lib/mongodb';
 import { sendNutritionPlanEmail } from '../../lib/email';
 
+// Log de diagnóstico para variables de entorno (no muestra valores)
+let hasLoggedEnvPresence = false;
+function logEnvPresenceOnce() {
+  if (hasLoggedEnvPresence) return;
+  hasLoggedEnvPresence = true;
+  try {
+    const presence = {
+      MONGODB_URI: Boolean(process.env.MONGODB_URI),
+      MONGODB_DB_NAME: Boolean(process.env.MONGODB_DB_NAME),
+      EMAIL_USER: Boolean(process.env.EMAIL_USER),
+      EMAIL_PASS: Boolean(process.env.EMAIL_PASS),
+      PLAN_PDF_PATH: Boolean(process.env.PLAN_PDF_PATH),
+      ALLOW_INSECURE_TLS: Boolean(process.env.ALLOW_INSECURE_TLS),
+    };
+    console.log('ENV PRESENCE CHECK →', presence, {
+      NODE_ENV: process.env.NODE_ENV,
+      cwd: process.cwd(),
+    });
+  } catch {
+    // Ignorar errores de log
+  }
+}
+
 export async function POST(request) {
   try {
+    // Diagnóstico: imprimir presencia de variables y contexto de runtime
+    logEnvPresenceOnce();
+
     // Verificar que la variable de entorno esté definida
     if (!process.env.MONGODB_URI) {
       console.error('MONGODB_URI no está definida');
