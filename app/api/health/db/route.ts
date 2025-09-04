@@ -17,10 +17,19 @@ export async function GET() {
 
     const clientPromise = getMongoClientPromise();
     if (!clientPromise) {
-      return NextResponse.json({ ok: false, presence, db: 'missing_uri' }, { status: 500 });
+      return NextResponse.json({ ok: false, presence, reason: 'missing_uri' }, { status: 500 });
     }
     const client = await clientPromise;
-    const db = client?.db(process.env.MONGODB_DB_NAME || 'clinikids');
+    if (!client) {
+      return NextResponse.json({ ok: false, presence, reason: 'client_null' }, { status: 500 });
+    }
+    if (typeof client.db !== 'function') {
+      return NextResponse.json({ ok: false, presence, reason: 'db_method_missing' }, { status: 500 });
+    }
+    const db = client.db(process.env.MONGODB_DB_NAME || 'clinikids');
+    if (!db) {
+      return NextResponse.json({ ok: false, presence, reason: 'db_undefined' }, { status: 500 });
+    }
     const ping = await db.command({ ping: 1 });
     return NextResponse.json({ ok: true, presence, ping });
   } catch (error: unknown) {
