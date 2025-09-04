@@ -9,7 +9,7 @@ const primaryUri = process.env.MONGODB_URI;
 const fallbackUri = process.env.MONGODB_URI_FALLBACK || process.env.MONGODB_SEED_URI;
 const dbName = process.env.MONGODB_DB_NAME || 'clinikids';
 
-let clientPromise;
+let cachedClientPromise = null;
 
 async function connectWithUris(uris) {
   const options = {
@@ -30,22 +30,19 @@ async function connectWithUris(uris) {
       return localClient;
     } catch (err) {
       lastError = err;
-      // Si falla el SRV, intentamos el siguiente URI (seedlist) si existe
-      // Continuar con el siguiente URI del arreglo
+      // intentar siguiente URI
     }
   }
   if (lastError) throw lastError;
   return null;
 }
 
-async function getClient() {
+async function createClient() {
   if (!primaryUri && !fallbackUri) {
-    console.log('⚠️ MONGODB_URI no está definida - Modo de prueba');
     return null;
   }
 
   const urisToTry = [primaryUri, fallbackUri].filter(Boolean);
-  // Reintentos simples
   const maxAttempts = 2;
   let attempt = 0;
   let connectedClient = null;
@@ -60,14 +57,23 @@ async function getClient() {
   return connectedClient;
 }
 
-// Crear y cachear la conexión según el entorno
-if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
-    global._mongoClientPromise = getClient();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  clientPromise = getClient();
-}
+// Exportar función para obtener (y cachear) el cliente bajo demanda
+export default function getMongoClientPromise() {
+  if (cachedClientPromise) return cachedClientPromise;
 
-export default clientPromise;
+  // Reutilizar en entornos serverless entre invocaciones
+  const globalAny = global;
+  if (process.env.NODE_ENV === 'development') {
+    if (!globalAny._mongoClientPromise) {
+      globalAny._mongoClientPromise = createClient();
+    }
+    cachedClientPromise = globalAny._mongoClientPromise;
+  } else {
+    if (!globalAny._mongoClientPromise) {
+      globalAny._mongoClientPromise = createClient();
+    }
+    cachedClientPromise = globalAny._mongoClientPromise;
+  }
+
+  return cachedClientPromise;
+}

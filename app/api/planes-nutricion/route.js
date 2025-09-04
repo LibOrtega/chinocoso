@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import clientPromise from '../../lib/mongodb';
+import getMongoClientPromise from '../../lib/mongodb';
 import { sendNutritionPlanEmail } from '../../lib/email';
 
 // Log de diagnóstico para variables de entorno (no muestra valores)
@@ -42,6 +42,7 @@ export async function POST(request) {
     const body = await request.json();
 
     // Verificar que el cliente de MongoDB esté disponible
+    const clientPromise = getMongoClientPromise();
     if (!clientPromise) {
       console.error('Cliente de MongoDB no disponible');
       return NextResponse.json(
