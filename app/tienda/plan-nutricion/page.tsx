@@ -92,11 +92,11 @@ export default function PlanNutricion() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Plan de Nutrición Personalizado
+              Prueba gratuita: Plan de alimentación
             </h1>
             <p className="text-lg md:text-xl text-gray-600 px-2">
-              Completa el formulario y nos pondremos en contacto contigo para crear
-              el plan perfecto para tu pequeño
+              Completa el formulario para recibir una semana de prueba de un plan de alimentación
+              para tu pequeño.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function PlanNutricion() {
                 <div className="text-green-600 text-2xl">✅</div>
                 <div>
                   <h3 className="font-semibold text-green-800 text-lg">¡Formulario enviado exitosamente!</h3>
-                  <p className="text-green-700">Te hemos enviado un email con tu plan de nutrición personalizado. Revisa tu bandeja de entrada y la carpeta de spam.</p>
+                  <p className="text-green-700">Te enviamos por email tu semana de prueba de un plan de alimentación. Revisa tu bandeja de entrada y la carpeta de spam.</p>
                 </div>
               </div>
             </div>
@@ -341,7 +341,7 @@ export default function PlanNutricion() {
                       </svg>
                       <div>
                         <p className="font-semibold text-[#5dc0b3]">¡Recibirás tu plan por correo!</p>
-                        <p className="text-sm text-gray-600">Te enviaremos un email completo con tu plan de nutrición personalizado y toda la información necesaria. Si no lo recibes, revisa tu carpeta de spam.</p>
+                        <p className="text-sm text-gray-600">Te enviaremos por email una semana de prueba de un plan de alimentación. Si no lo recibes, revisa tu carpeta de spam.</p>
                       </div>
                     </div>
                   </div>

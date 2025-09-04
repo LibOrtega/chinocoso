@@ -91,7 +91,7 @@ export default function Tienda() {
                 
                 <Link href="/tienda/plan-nutricion">
                   <Button className="w-full bg-[#f3994d] hover:bg-[#f3994d]/90 text-white py-2 text-base">
-                    ¡Quiero el Plan!
+                    Prueba gratuita de una semana
                   </Button>
                 </Link>
               </div>
