@@ -26,7 +26,7 @@ export default function Tienda() {
                 <div className="h-48 md:h-full bg-gradient-to-br from-[#5dc0b3] to-[#f3994d] flex items-center justify-center">
                   <div className="text-center text-white">
                     <div className="text-4xl mb-2">🥗</div>
-                    <h3 className="text-lg font-bold">Plan de Nutrición</h3>
+                    <h3 className="text-lg font-bold">Plan de alimentación</h3>
                   </div>
                 </div>
               </div>
@@ -40,37 +40,36 @@ export default function Tienda() {
                 </div>
                 
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                  Plan de Nutrición Personalizado
+                  Plan de alimentación
                 </h2>
                 
                 <p className="text-gray-600 mb-4 text-sm">
-                  Un programa completo de nutrición diseñado específicamente para tu pequeño, 
-                  con seguimiento profesional y resultados garantizados.
+                  Programa de nutrición para tu pequeño, con acompañamiento profesional y recursos prácticos.
                 </p>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-[#5dc0b3]" />
-                    <span className="text-gray-700 text-sm">Evaluación nutricional completa</span>
+                    <span className="text-gray-700 text-sm">Lista de supermercado</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-[#5dc0b3]" />
-                    <span className="text-gray-700 text-sm">Plan alimenticio personalizado</span>
+                    <span className="text-gray-700 text-sm">Menú semanal</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-[#5dc0b3]" />
-                    <span className="text-gray-700 text-sm">Seguimiento mensual</span>
+                    <span className="text-gray-700 text-sm">Seguimiento por expertos vía WhatsApp</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-[#5dc0b3]" />
-                    <span className="text-gray-700 text-sm">Recetas y menús semanales</span>
+                    <span className="text-gray-700 text-sm">Recetas prácticas y recomendaciones</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-[#5dc0b3]" />
-                    <span className="text-xs text-gray-600">3 meses</span>
+                    <span className="text-xs text-gray-600">Una semana</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="h-4 w-4 text-[#5dc0b3]" />
@@ -84,7 +83,7 @@ export default function Tienda() {
                     <Gift className="h-5 w-5 text-[#5dc0b3]" />
                     <div>
                       <p className="font-semibold text-[#5dc0b3] text-sm">¡Prueba Gratis por 1 Semana!</p>
-                      <p className="text-xs text-gray-600">Experimenta los beneficios antes de comprometerte</p>
+                      <p className="text-xs text-gray-600">Prueba esta versión piloto y comparte tu experiencia</p>
                     </div>
                   </div>
                 </div>
