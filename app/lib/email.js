@@ -99,8 +99,8 @@ export async function sendNutritionPlanEmail(formData) {
       `;
     };
 
-    const fromAddress = process.env.EMAIL_FROM || 'onboarding@resend.dev';
-
+    const fromAddress = process.env.EMAIL_FROM;
+/*
     // Intento principal (con adjunto si está habilitado)
     let html = buildHtml({ linkOnly: !emailAttachPdf });
     let attachments = [];
@@ -115,7 +115,7 @@ export async function sendNutritionPlanEmail(formData) {
         html = buildHtml({ linkOnly: true });
       }
     }
-
+*/
     try {
       const result = await resend.emails.send({
         from: fromAddress,
