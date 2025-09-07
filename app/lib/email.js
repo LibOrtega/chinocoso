@@ -23,7 +23,7 @@ export async function sendNutritionPlanEmail(formData) {
     // Configuración para adjunto/enlace
    // const emailAttachPdf = String(process.env.EMAIL_ATTACH_PDF ?? 'true').toLowerCase() !== 'false';
     // Resolver ruta del PDF: validar y hacer fallback a public/plan-nutricional.pdf
-    function resolvePdfPath() {
+    /*function resolvePdfPath() {
       const envPathRaw = process.env.PLAN_PDF_PATH || '';
       let filePath = envPathRaw;
       // Soportar rutas con prefijo file://
@@ -45,7 +45,7 @@ export async function sendNutritionPlanEmail(formData) {
       } catch {}
       const fallback = path.join(process.cwd(), 'public', 'plan-nutricional.pdf');
       return fallback;
-    }
+    }*/
     //const planPdfPath = resolvePdfPath();
     const planPdfUrl = process.env.PLAN_PDF_URL; // opcional
 
