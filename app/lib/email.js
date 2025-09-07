@@ -48,6 +48,7 @@ export async function sendNutritionPlanEmail(formData) {
     }*/
     //const planPdfPath = resolvePdfPath();
     const planPdfUrl = process.env.PLAN_PDF_URL; // opcional
+    const freePlanLink = process.env.FREE_PLAN_URL || 'https://www.clinikidscuu.com/plan-nutricional.pdf';
 
     // Plantilla del email con soporte de enlace
     const whatsappLink = `https://wa.me/526145502199?text=${encodeURIComponent('Hola, vi mi plan nutricional. Me gustaría más información 😊')}`;
@@ -55,6 +56,8 @@ export async function sendNutritionPlanEmail(formData) {
       const pdfParagraph = linkOnly
         ? `<p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">📎 Para ver tu semana de prueba, descárgala aquí: ${planPdfUrl ? `<a href="${planPdfUrl}" target="_blank" rel="noopener">Descargar PDF</a>` : 'contacta con nosotros para recibir el PDF.'}</p>`
         : `<p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">📎 El PDF de tu semana de prueba viene adjunto en este correo.</p>`;
+
+      const directLinkParagraph = `<p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">🔗 Puedes ver tu plan gratuito aquí: <a href="${freePlanLink}" target="_blank" rel="noopener">${freePlanLink}</a></p>`;
 
       return `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9;">
@@ -65,10 +68,11 @@ export async function sendNutritionPlanEmail(formData) {
           <div style="padding: 30px; background-color: white; margin: 0 20px;">
             <h2 style="color: #333; margin-bottom: 25px; font-size: 24px;">Hola, mamá 💕</h2>
             <p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">
-              En <strong style=\"color:#5dc0b3;\">CliniKids</strong> queremos acompañarte en el cuidado de la salud de tus peques. Por eso te
+              En <strong style="color:#5dc0b3;">CliniKids</strong> queremos acompañarte en el cuidado de la salud de tus peques. Por eso te
               compartimos una <strong>semana de prueba gratuita</strong> de nuestro <strong>plan nutricional</strong>.
             </p>
             ${pdfParagraph}
+            ${directLinkParagraph}
             <p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">
               👉 Recuerda que esta es solamente una prueba gratuita y tu experiencia será muy valiosa para ayudarnos a mejorar.
             </p>
@@ -83,7 +87,7 @@ export async function sendNutritionPlanEmail(formData) {
               <div style="margin-top:8px; color:#666; font-size:14px;">o envía mensaje al <strong>614 550 2199</strong></div>
             </div>
             <p style="color: #555; line-height: 1.7; margin-bottom: 22px; font-size: 16px;">
-              ¡Gracias por ser parte de <strong style=\"color:#5dc0b3;\">CliniKids</strong>! 💚
+              ¡Gracias por ser parte de <strong style="color:#5dc0b3;">CliniKids</strong>! 💚
             </p>
             <div style="text-align: center; margin-top: 30px;">
               <p style="color: #5dc0b3; font-size: 18px; font-weight: bold; margin: 0;">Con cariño,</p>
