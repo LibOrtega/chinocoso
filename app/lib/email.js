@@ -1,33 +1,24 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import fs from 'fs';
 import path from 'path';
 
-// Variable para almacenar el transportador (FORZANDO DEPLOYMENT)
-let transporter = null;
+// Cliente Resend en singleton
+let resendClient = null;
 
-// Función para obtener el transportador (solo se ejecuta en runtime)
-function getTransporter() {
-  if (!transporter) {
-    // Verificar que las variables de entorno estén disponibles
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Variables de entorno EMAIL_USER y EMAIL_PASS no están configuradas');
+function getResendClient() {
+  if (!resendClient) {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('Variable de entorno RESEND_API_KEY no está configurada');
     }
-    
-    transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
+    resendClient = new Resend(process.env.RESEND_API_KEY);
   }
-  return transporter;
+  return resendClient;
 }
 
 // Función para enviar email con el plan de nutrición
 export async function sendNutritionPlanEmail(formData) {
   try {
-    const emailTransporter = getTransporter();
+    const resend = getResendClient();
 
     // Configuración para adjunto/enlace
     const emailAttachPdf = String(process.env.EMAIL_ATTACH_PDF ?? 'true').toLowerCase() !== 'false';
@@ -75,13 +66,11 @@ export async function sendNutritionPlanEmail(formData) {
             <h2 style="color: #333; margin-bottom: 25px; font-size: 24px;">Hola, mamá 💕</h2>
             <p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">
               En <strong style=\"color:#5dc0b3;\">CliniKids</strong> queremos acompañarte en el cuidado de la salud de tus peques. Por eso te
-              compartimos una <strong>semana de prueba gratuita</strong> de nuestro <strong>plan nutricional</strong>, elaborado por nuestro
-              equipo de pediatras y nutriólogas.
+              compartimos una <strong>semana de prueba gratuita</strong> de nuestro <strong>plan nutricional</strong>.
             </p>
             ${pdfParagraph}
             <p style="color: #555; line-height: 1.7; margin-bottom: 16px; font-size: 16px;">
-              👉 Recuerda que esta es solamente una prueba gratuita y tu experiencia será muy valiosa para ayudarnos a mejorar y
-              ofrecerte cada vez más beneficios.
+              👉 Recuerda que esta es solamente una prueba gratuita y tu experiencia será muy valiosa para ayudarnos a mejorar.
             </p>
             <p style="color: #555; line-height: 1.7; margin-bottom: 10px; font-size: 16px;">
               📱 Antes de comenzar, te pedimos que por favor te unas a nuestro grupo de WhatsApp para recibir recordatorios, tips y
@@ -110,47 +99,49 @@ export async function sendNutritionPlanEmail(formData) {
       `;
     };
 
-    // Opciones base del email
-    const baseOptions = {
-      from: process.env.EMAIL_USER,
-      to: formData.emailMadre,
-      subject: '🌟 Tu plan de alimentación semanal gratuito ya está aquí',
-    };
+    const fromAddress = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
     // Intento principal (con adjunto si está habilitado)
-    let mailOptions = {
-      ...baseOptions,
-      html: buildHtml({ linkOnly: !emailAttachPdf }),
-      attachments: [],
-    };
+    let html = buildHtml({ linkOnly: !emailAttachPdf });
+    let attachments = [];
     if (emailAttachPdf) {
-      mailOptions.attachments = [
-        { filename: 'plan-nutricional.pdf', path: planPdfPath, contentType: 'application/pdf' }
-      ];
+      try {
+        const fileBuffer = fs.readFileSync(planPdfPath);
+        attachments = [
+          { filename: 'plan-nutricional.pdf', content: fileBuffer },
+        ];
+      } catch {
+        // Si no se puede leer el archivo, enviamos sin adjunto
+        html = buildHtml({ linkOnly: true });
+      }
     }
 
     try {
-      const info = await emailTransporter.sendMail(mailOptions);
-      console.log('Email enviado:', info.messageId);
-      return { success: true, messageId: info.messageId };
+      const result = await resend.emails.send({
+        from: fromAddress,
+        to: formData.emailMadre,
+        subject: '🌟 Tu plan de alimentación semanal gratuito ya está aquí',
+        html,
+        attachments,
+      });
+      console.log('Email enviado:', result?.id || 'ok');
+      return { success: true, messageId: result?.id || 'ok' };
     } catch (err) {
-      const isSizeLimit = (err && (err.responseCode === 552 || String(err.response || '').includes('5.3.4')));
-      if (isSizeLimit) {
-        try {
-          console.warn('Reintentando envío sin adjunto por límite de tamaño o fallo con adjunto');
-          const info2 = await emailTransporter.sendMail({
-            ...baseOptions,
-            html: buildHtml({ linkOnly: true }),
-          });
-          console.log('Email enviado (fallback sin adjunto):', info2.messageId);
-          return { success: true, messageId: info2.messageId, fallback: true };
-        } catch (err2) {
-          console.error('Fallo envío fallback sin adjunto:', err2);
-          throw new Error('No se pudo enviar el email');
-        }
+      // Reintento sin adjunto
+      try {
+        console.warn('Reintentando envío sin adjunto (Resend)');
+        const result2 = await resend.emails.send({
+          from: fromAddress,
+          to: formData.emailMadre,
+          subject: '🌟 Tu plan de alimentación semanal gratuito ya está aquí',
+          html: buildHtml({ linkOnly: true }),
+        });
+        console.log('Email enviado (fallback sin adjunto):', result2?.id || 'ok');
+        return { success: true, messageId: result2?.id || 'ok', fallback: true };
+      } catch (err2) {
+        console.error('Fallo envío con Resend:', err2);
+        throw new Error('No se pudo enviar el email');
       }
-      console.error('Error al enviar email:', err);
-      throw new Error('No se pudo enviar el email');
     }
   } catch (error) {
     console.error('Error al enviar email:', error);
