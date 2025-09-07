@@ -126,7 +126,7 @@ export async function sendNutritionPlanEmail(formData) {
       });
       console.log('Email enviado:', result?.id || 'ok');
       return { success: true, messageId: result?.id || 'ok' };
-    } catch (err) {
+    } catch {
       // Reintento sin adjunto
       try {
         console.warn('Reintentando envío sin adjunto (Resend)');
