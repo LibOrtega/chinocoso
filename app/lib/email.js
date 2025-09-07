@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
-import fs from 'fs';
-import path from 'path';
+/*import fs from 'fs';
+import path from 'path';*/
 
 // Cliente Resend en singleton
 let resendClient = null;
