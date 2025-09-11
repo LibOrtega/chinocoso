@@ -165,6 +165,33 @@ export default function Tienda() {
     return cart.reduce((total, item) => total + item.quantity, 0)
   }
 
+  const generateWhatsAppMessage = () => {
+    if (cart.length === 0) return ""
+    
+    let message = "¡Hola! Me interesa comprar los siguientes productos de CliniKids:\n\n"
+    
+    cart.forEach((item, index) => {
+      message += `${index + 1}. ${item.product.name}\n`
+      message += `   Cantidad: ${item.quantity}\n`
+      message += `   Precio unitario: $${item.product.price}\n`
+      message += `   Subtotal: $${item.product.price * item.quantity}\n\n`
+    })
+    
+    message += `💰 TOTAL: $${getTotalPrice()}\n\n`
+    message += "¿Podrían ayudarme con la compra? ¡Gracias! 😊"
+    
+    return message
+  }
+
+  const handleCheckout = () => {
+    console.log('Botón de checkout clickeado')
+    const message = generateWhatsAppMessage()
+    console.log('Mensaje generado:', message)
+    const whatsappUrl = `https://wa.me/526145502199?text=${encodeURIComponent(message)}`
+    console.log('URL de WhatsApp:', whatsappUrl)
+    window.open(whatsappUrl, '_blank')
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#5dc0b3]/10">
       <Header />
@@ -255,7 +282,10 @@ export default function Tienda() {
                         <span className="text-lg font-bold">Total:</span>
                         <span className="text-lg font-bold text-[#5dc0b3]">${getTotalPrice()}</span>
                       </div>
-                      <Button className="w-full bg-[#5dc0b3] hover:bg-[#5dc0b3]/90 text-white">
+                      <Button 
+                        onClick={handleCheckout}
+                        className="w-full bg-[#5dc0b3] hover:bg-[#5dc0b3]/90 text-white"
+                      >
                         Proceder al pago
                       </Button>
                     </div>
