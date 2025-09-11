@@ -282,6 +282,15 @@ export default function Tienda() {
                         <span className="text-lg font-bold">Total:</span>
                         <span className="text-lg font-bold text-[#5dc0b3]">${getTotalPrice()}</span>
                       </div>
+                      
+                      {/* Disclaimer */}
+                      <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <p className="text-xs text-gray-600 text-center">
+                          📍 <strong>Entrega:</strong> Los productos se entregarán en sucursal<br/>
+                          <span className="font-medium">Blas Cano de los Ríos 807, San Felipe I, Chihuahua, Chih.</span>
+                        </p>
+                      </div>
+                      
                       <Button 
                         onClick={handleCheckout}
                         className="w-full bg-[#5dc0b3] hover:bg-[#5dc0b3]/90 text-white"
