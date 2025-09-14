@@ -14,7 +14,7 @@ const products = [
     price: 299,
     description: "Crema especializada para bebés con piel sensible o eczema. Alivia comezón y resequedad. Respaldo dermatológico.",
     category: "Cuidado de la piel",
-    image: "🧴"
+    image: "/images/eucerin-baby.jpg.jpg"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const products = [
     price: 259,
     description: "Crema segura para pezones agrietados durante la lactancia. No requiere enjuague antes de amamantar.",
     category: "Lactancia",
-    image: "💧"
+    image: "/images/lanolina-medela.jpg.jpg"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const products = [
     price: 95,
     description: "Mordedera BPA free. Alivia encías en la dentición. Segura, práctica y económica.",
     category: "Dentición",
-    image: "🦷"
+    image: "/images/inf-teether.jpg.jpg"
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const products = [
     price: 350,
     description: "Ungüento para resequedad o irritación. Presentación pequeña, práctica para bolso o pañalera.",
     category: "Cuidado de la piel",
-    image: "🧴"
+    image: "/images/aquaphor-chico.jpg.jpg"
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const products = [
     price: 529,
     description: "Ungüento para resequedad intensa. Presentación grande, ideal para casa.",
     category: "Cuidado de la piel",
-    image: "🧴"
+    image: "/images/aquaphor-grande.jpg.jpg"
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const products = [
     price: 569,
     description: "Dispositivo higiénico para remover secreciones nasales. Ayuda a respirar mejor durante resfriados.",
     category: "Salud",
-    image: "🩺"
+    image: "/images/aspirador-nasal.jpg.jpg"
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ const products = [
     price: 125,
     description: "Alimentador de silicón para fruta y papillas. Permite introducir alimentos sólidos de manera segura.",
     category: "Alimentación",
-    image: "🍎"
+    image: "/images/nuby-feeder.jpg.jpg"
   },
   {
     id: 8,
@@ -70,7 +70,7 @@ const products = [
     price: 279,
     description: "Termómetro rápido y confiable. Fácil de usar en casa para toda la familia.",
     category: "Salud",
-    image: "🌡️"
+    image: "/images/termometro-vicks.jpg.jpg"
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ const products = [
     price: 239,
     description: "Repelente suave contra mosquitos para niños. Fórmula especial que protege sin irritar.",
     category: "Protección",
-    image: "🦟"
+    image: "/images/off-kids.jpg.jpg"
   },
   {
     id: 10,
@@ -86,7 +86,7 @@ const products = [
     price: 999,
     description: "Kit completo de biberones anticólicos. Incluye varias tallas de tetina. Marca reconocida.",
     category: "Alimentación",
-    image: "🍼"
+    image: "/images/avent-set.jpg.jpg"
   },
   {
     id: 11,
@@ -94,7 +94,7 @@ const products = [
     price: 599,
     description: "Biberones diseñados para reducir cólicos y gases. Recomendados para bebés con reflujo.",
     category: "Alimentación",
-    image: "🍼"
+    image: "/images/dr-brown-kit.jpg.jpg"
   },
   {
     id: 12,
@@ -102,7 +102,7 @@ const products = [
     price: 579,
     description: "Biberón individual anticólico. Flujo natural que reduce burbujas de aire y malestar.",
     category: "Alimentación",
-    image: "🍼"
+    image: "/images/dr-brown-natural.jpg.jpg"
   },
   {
     id: 13,
@@ -110,7 +110,7 @@ const products = [
     price: 249,
     description: "Jabón líquido hipoalergénico. Limpieza suave para la piel del bebé. Uso diario, pH neutro.",
     category: "Higiene",
-    image: "🧼"
+    image: "/images/dove-baby.jpg.jpg"
   }
 ]
 
@@ -244,7 +244,11 @@ export default function Tienda() {
                     <div className="space-y-4 mb-6">
                       {cart.map(item => (
                         <div key={item.product.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                          <div className="text-2xl">{item.product.image}</div>
+                          <img 
+                            src={item.product.image} 
+                            alt={item.product.name}
+                            className="h-12 w-12 object-contain rounded"
+                          />
                           <div className="flex-1">
                             <h3 className="font-medium text-sm">{item.product.name}</h3>
                             <p className="text-gray-600 text-sm">${item.product.price}</p>
@@ -397,7 +401,11 @@ export default function Tienda() {
                 {categoryProducts.map(product => (
                   <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="h-48 bg-gradient-to-br from-[#5dc0b3]/20 to-[#f3994d]/20 flex items-center justify-center">
-                      <div className="text-6xl">{product.image}</div>
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
