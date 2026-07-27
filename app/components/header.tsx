@@ -25,7 +25,7 @@ export default function Header() {
           </Link>
           
           {/* Navegación Desktop */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <nav className="hidden md:flex items-center space-x-5 lg:space-x-7">
             <Link href="/#about" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
               Conócenos
             </Link>
@@ -34,6 +34,9 @@ export default function Header() {
             </Link>
             <Link href="/#facilities" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
               Instalaciones
+            </Link>
+            <Link href="/lactancia" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+              Lactancia
             </Link>
             <Link href="/aviso-de-privacidad" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
               Privacidad
@@ -85,6 +88,13 @@ export default function Header() {
                 onClick={closeMenu}
               >
                 Instalaciones
+              </Link>
+              <Link 
+                href="/lactancia" 
+                className="px-4 py-3 text-gray-700 hover:text-[#5dc0b3] hover:bg-gray-50 transition-colors border-b border-gray-100"
+                onClick={closeMenu}
+              >
+                Lactancia
               </Link>
               <Link 
                 href="/aviso-de-privacidad" 

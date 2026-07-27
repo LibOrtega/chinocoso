@@ -91,7 +91,14 @@ export default function SocialMedia() {
             </div>
           </div>
 
-          <p className="mt-8 text-sm text-gray-500">
+          <p className="mt-8 text-sm text-gray-500 flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <a
+              href="/lactancia"
+              className="text-[#5dc0b3] hover:text-[#4aa99c] font-medium transition-colors"
+            >
+              Lactancia en Clinikids
+            </a>
+            <span className="text-gray-300 hidden sm:inline">·</span>
             <a
               href="/aviso-de-privacidad"
               className="text-[#5dc0b3] hover:text-[#4aa99c] font-medium transition-colors"
