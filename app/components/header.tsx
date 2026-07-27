@@ -35,7 +35,7 @@ export default function Header() {
             <Link href="/#facilities" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
               Instalaciones
             </Link>
-            <Link href="/#privacy" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
+            <Link href="/aviso-de-privacidad" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
               Privacidad
             </Link>
             <Link href="/#contact" className="text-gray-700 hover:text-[#5dc0b3] transition-colors">
@@ -87,7 +87,7 @@ export default function Header() {
                 Instalaciones
               </Link>
               <Link 
-                href="/#privacy" 
+                href="/aviso-de-privacidad" 
                 className="px-4 py-3 text-gray-700 hover:text-[#5dc0b3] hover:bg-gray-50 transition-colors border-b border-gray-100"
                 onClick={closeMenu}
               >

@@ -90,6 +90,15 @@ export default function SocialMedia() {
               </div>
             </div>
           </div>
+
+          <p className="mt-8 text-sm text-gray-500">
+            <a
+              href="/aviso-de-privacidad"
+              className="text-[#5dc0b3] hover:text-[#4aa99c] font-medium transition-colors"
+            >
+              Aviso de Privacidad
+            </a>
+          </p>
         </div>
       </div>
     </section>
