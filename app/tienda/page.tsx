@@ -4,6 +4,7 @@ import Header from "../components/header"
 import { Button } from "@/components/ui/button"
 import { Star, Clock, Users, CheckCircle, Gift, ShoppingCart, Plus, Minus, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 
 // Datos de productos
@@ -244,9 +245,11 @@ export default function Tienda() {
                     <div className="space-y-4 mb-6">
                       {cart.map(item => (
                         <div key={item.product.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                          <img 
+                          <Image 
                             src={item.product.image} 
                             alt={item.product.name}
+                            width={48}
+                            height={48}
                             className="h-12 w-12 object-contain rounded"
                           />
                           <div className="flex-1">
@@ -401,9 +404,11 @@ export default function Tienda() {
                 {categoryProducts.map(product => (
                   <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="h-48 bg-gradient-to-br from-[#5dc0b3]/20 to-[#f3994d]/20 flex items-center justify-center">
-                      <img 
+                      <Image 
                         src={product.image} 
                         alt={product.name}
+                        width={400}
+                        height={192}
                         className="h-full w-full object-cover"
                       />
                     </div>
