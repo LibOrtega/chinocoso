@@ -3,6 +3,7 @@ import HowToUse from "./components/how-to-use"
 import Testimonials from "./components/testimonials"
 import SocialMedia from "./components/social-media"
 import Facilities from "./components/facilities"
+import PrivacyNotice from "./components/privacy-notice"
 import Header from "./components/header"
 import Image from "next/image"
 
@@ -33,6 +34,7 @@ export default function Home() {
         <Facilities />
         <HowToUse />
         <Testimonials />
+        <PrivacyNotice />
         <SocialMedia />
       </main>
     </div>
