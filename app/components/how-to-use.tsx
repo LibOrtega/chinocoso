@@ -22,7 +22,6 @@ const services: Service[] = [
       "Neurología Pediátrica",
       "Fisioterapia Pediátrica",
       "Neumología Pediátrica",
-      "Dermatología Pediátrica",
       "Gastroenterología Pediátrica"
     ]
   },
@@ -32,8 +31,7 @@ const services: Service[] = [
       "Estimulación Temprana",
       "Pediatría del Desarrollo",
       "Asesoría de Lactancia",
-      "Atención Integral del Síndrome de Down",
-      "Asesoría de Alimentación Oromotora y Selectividad Alimentaria"
+      "Atención Integral del Síndrome de Down"
     ]
   }
 ]

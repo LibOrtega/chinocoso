@@ -294,7 +294,7 @@ export default function Tienda() {
                       <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
                         <p className="text-xs text-gray-600 text-center">
                           📍 <strong>Entrega:</strong> Los productos se entregarán en sucursal<br/>
-                          <span className="font-medium">Blas Cano de los Ríos 807, San Felipe I, Chihuahua, Chih.</span>
+                          <span className="font-medium">Rodriguez Gallardo #807, San Felipe Etapa 1</span>
                         </p>
                       </div>
                       

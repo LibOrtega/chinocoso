@@ -57,7 +57,7 @@ export default function SocialMedia() {
               <MapPin className="h-6 w-6 text-[#5dc0b3]" />
               <div className="text-left">
                 <p className="font-medium">Dirección</p>
-                <p className="text-sm">Blas Cano de los Ríos 807, San Felipe I</p>
+                <p className="text-sm">Rodriguez Gallardo #807, San Felipe Etapa 1</p>
               </div>
             </div>
             

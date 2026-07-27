@@ -12,7 +12,7 @@ const sections = [
     id: "responsable",
     title: "I. Responsable del tratamiento de los datos personales",
     paragraphs: [
-      "Grupo Onori Innovación en Salud, S.C., persona moral legalmente constituida conforme a las leyes mexicanas, con domicilio en Rodríguez Gallardo No. 807, Colonia San Felipe Etapa I, C.P. 31203, Chihuahua, Chihuahua, México, es el Responsable del tratamiento de los datos personales y datos personales sensibles recabados durante la prestación de los servicios ofrecidos por Clinikids, respondiendo por su obtención, uso, almacenamiento, conservación, acceso, transferencia, protección y, en su caso, eliminación, en estricto apego a la legislación vigente.",
+      "Grupo Onori Innovación en Salud, S.C., persona moral legalmente constituida conforme a las leyes mexicanas, con domicilio en Rodriguez Gallardo #807, San Felipe Etapa 1, Chihuahua, Chihuahua, México, es el Responsable del tratamiento de los datos personales y datos personales sensibles recabados durante la prestación de los servicios ofrecidos por Clinikids, respondiendo por su obtención, uso, almacenamiento, conservación, acceso, transferencia, protección y, en su caso, eliminación, en estricto apego a la legislación vigente.",
       "Para efectos del presente Aviso de Privacidad, toda referencia a Clinikids deberá entenderse como la unidad médica operada por Grupo Onori Innovación en Salud, S.C., quien asume las obligaciones legales derivadas del tratamiento de la información personal de sus pacientes, representantes legales, familiares, proveedores y demás titulares de datos personales.",
     ],
   },
@@ -86,7 +86,7 @@ const sections = [
       company: "Grupo Onori Innovación en Salud, S.C.",
       unit: "Unidad Médica: Clinikids",
       address:
-        "Rodríguez Gallardo No. 807, Colonia San Felipe Etapa I, C.P. 31203, Chihuahua, Chihuahua, México.",
+        "Rodriguez Gallardo #807, San Felipe Etapa 1, Chihuahua, Chihuahua, México.",
       email: "hola@clinikidscuu.com",
       phone: "614 550 2199",
     },
