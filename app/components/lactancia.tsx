@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import LactanciaSenalesHambre from "./lactancia-senales-hambre"
 
 export default function Lactancia() {
   return (
@@ -47,7 +48,13 @@ export default function Lactancia() {
               conocer tus dudas y comentarios. Estaremos felices de ayudarte.
             </p>
           </div>
+        </div>
 
+        <div className="max-w-6xl mx-auto">
+          <LactanciaSenalesHambre />
+        </div>
+
+        <div className="max-w-3xl mx-auto">
           <div className="mt-12 pt-10 border-t border-[#5dc0b3]/20 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/526145502199?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20lactancia%20materna%20en%20Clinikids."
