@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import LactanciaSenalesHambre from "./lactancia-senales-hambre"
+import LactanciaTecnica from "./lactancia-tecnica"
 
 export default function Lactancia() {
   return (
@@ -52,6 +53,7 @@ export default function Lactancia() {
 
         <div className="max-w-6xl mx-auto">
           <LactanciaSenalesHambre />
+          <LactanciaTecnica />
         </div>
 
         <div className="max-w-3xl mx-auto">
