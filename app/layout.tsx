@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 // import { Noto_Serif_JP, Noto_Sans_JP } from "next/font/google"
 import "./globals.css"
 import type React from "react" // Import React
+import Watermark from "./components/watermark"
 
 // const notoSerif = Noto_Serif_JP({
 //   subsets: ["latin"],
@@ -50,7 +51,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <Watermark />
+      </body>
     </html>
   )
 }
