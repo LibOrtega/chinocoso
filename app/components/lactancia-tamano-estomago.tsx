@@ -210,31 +210,6 @@ export default function LactanciaTamanoEstomago() {
           )
         })}
       </div>
-
-      <div className="mt-10 md:mt-12 bg-gradient-to-br from-[#5dc0b3]/15 via-white to-[#f3994d]/10 rounded-2xl p-6 md:p-8 shadow-md border border-[#5dc0b3]/20">
-        <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-          Recomendaciones
-        </h3>
-        <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-          <p>
-            Durante los primeros seis meses de vida se recomienda ofrecer{" "}
-            <span className="font-medium text-gray-800">
-              lactancia materna exclusiva y a libre demanda
-            </span>
-            , respondiendo a las señales de hambre del bebé. Posteriormente
-            puede iniciarse la alimentación complementaria, manteniendo la
-            lactancia materna hasta los dos años de edad o más, siempre que la
-            madre y el bebé lo deseen.
-          </p>
-          <p>
-            Recuerda que cada bebé tiene un ritmo diferente. Evita establecer
-            horarios estrictos para alimentarlo y permite que sea él quien
-            indique cuándo necesita comer mediante sus señales de hambre.
-            Observarlo y responder oportunamente favorecerá un crecimiento
-            saludable y una lactancia exitosa.
-          </p>
-        </div>
-      </div>
     </section>
   )
 }
